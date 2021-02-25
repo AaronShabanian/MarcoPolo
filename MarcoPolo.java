@@ -12,6 +12,14 @@ public class MarcoPolo extends Thread {
              System.out.println("Error");
          }
         polo.start();
+        try{
+            marco.join();
+            polo.join();
+            System.out.println("Thats all folks \n");
+        }
+        catch(Exception e){
+            System.out.println("Error");
+        }
     }
     public void run(){
         for(int i=0; i<10; i++){
@@ -23,10 +31,6 @@ public class MarcoPolo extends Thread {
                  System.out.println("Error");
              }
         }
-        if(Thread.currentThread().getName()=="Polo \n"){
-            System.out.println("Thats all folks \n");
-        }
-        
 
     }
 
